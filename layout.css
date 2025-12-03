@@ -1,0 +1,261 @@
+/* layout.css */
+
+/* HEADER & NAVIGATION */
+header {
+    background-color: var(--medium-gray);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container img {
+    width: 40px;
+    height: auto;
+}
+
+.logo-container span {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--orange);
+    font-family: var(--font-heading);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0; /* Відсутність відступу між елементами в десктопі */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 15px 20px; /* Додаємо відступи всередину посилання */
+    display: block;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: var(--orange);
+}
+
+/* Секція Hero (Для index.html) */
+.hero-section {
+    background: linear-gradient(135deg, var(--black) 0%, var(--medium-gray) 100%);
+    color: var(--white);
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.2em;
+    color: var(--orange);
+}
+
+.hero-section .subtitle {
+    font-size: 1.5em;
+    margin-top: 15px;
+    max-width: 800px;
+    font-weight: 300;
+    color: var(--white);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--medium-gray);
+    color: var(--white);
+    padding: 40px 20px 15px;
+    text-align: center;
+    border-top: 2px solid var(--orange);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: left;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.footer-content h3 {
+    color: var(--orange);
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+.copyright {
+    border-top: 1px solid var(--orange);
+    padding-top: 10px;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+/* =======================================
+   СТИЛІ БУРГЕР-МЕНЮ
+   ======================================= */
+
+.burger-menu-btn {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 100;
+}
+/* Встановлюємо основний стан і переходи для всіх частин бургера */
+.burger-icon,
+.burger-icon::before,
+.burger-icon::after {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--orange);
+    position: relative;
+    -webkit-transition: all 0.3s ease-in-out; 
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.burger-icon::before {
+    top: -8px;
+}
+
+.burger-icon::after {
+    top: 8px;
+}
+
+/* =======================================
+   МЕДІАЗАПИТИ (ADAPTIVITY)
+   ======================================= */
+    
+@media (max-width: 1024px) {
+    /* Стилі для планшетів */
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+    .hero-section .subtitle {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Стилі для мобільних пристроїв */
+    
+    /* HEADER & NAV */
+    header {
+        padding: 10px 20px;
+        flex-wrap: nowrap; /* Не дозволяємо логотипу та кнопці переноситись */
+    }
+
+    .burger-menu-btn {
+        display: block; /* Відображаємо кнопку */
+    }
+
+    header nav {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        background-color: var(--medium-gray);
+        z-index: 50;
+        padding: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    
+    header.menu-open nav {
+        display: flex; /* Відображаємо, коли відкрите */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        padding: 12px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Анімація Бургера в Х */
+    header.menu-open .burger-icon {
+        background-color: transparent; 
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    header.menu-open .burger-icon::before {
+        top: 0; 
+        -webkit-transform: rotate(0); 
+        -moz-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    header.menu-open .burger-icon::after {
+        top: 0; 
+        -webkit-transform: rotate(90deg); 
+        -moz-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    /* FOOTER */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    /* Специфічні стилі для адаптивності сторінки "Про нас" */
+    .about-content-container {
+        gap: 30px; 
+    }
+    .history-block,
+    .achievements-block {
+        flex: 1 1 100%; 
+        padding: 20px;
+    }
+    .about-content-container {
+        align-items: center; 
+    }
+}

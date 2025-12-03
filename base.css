@@ -1,0 +1,58 @@
+/* base.css */
+
+/* Змінні (Colors & Fonts) */
+:root {
+    --black: #111111;
+    --medium-gray: #222222;
+    --light-gray: #333333;
+    --white: #ffffff;
+    --orange: #ff6600; /* Основний акцент */
+    --btn-orange: #e65c00; /* Трохи темніший для кнопок */
+    --btn-pink: #ff3366; /* Яскравіший акцент для hover */
+
+    /* Шрифти */
+    --font-main: 'Roboto', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-accent: 'Open Sans', sans-serif; 
+}
+
+/* Скидання стилів (Reset) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden; /* Запобігає горизонтальному скролу */
+}
+
+main {
+    padding-top: 0;
+    min-height: 80vh;
+}
+
+/* Загальні елементи */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Акцентний колір для виділення тексту */
+.highlight {
+    color: var(--orange);
+}
+
+/* Стиль для активного посилання в навігації */
+header nav ul li a.active {
+    color: var(--orange);
+    border-bottom: 2px solid var(--orange);
+}
+
+

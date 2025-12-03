@@ -1,0 +1,566 @@
+/* components.css */
+
+/* =======================================
+   ЗАГАЛЬНІ КОМПОНЕНТИ (КНОПКИ, КАРТКИ, КОНТЕЙНЕРИ)
+   ======================================= */
+
+/* Кнопки (Buttons) - Стилі для <a> та <button> */
+.btn {
+    display: inline-block;
+    background-color: var(--btn-orange);
+    color: var(--white);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: var(--font-accent);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--btn-pink);
+    color: var(--white);
+}
+
+button {
+    background-color: var(--btn-orange);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-family: var(--font-accent);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--btn-pink);
+}
+
+/* Контейнери карток */
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap; 
+}
+
+/* Базова картка */
+.card {
+    flex: 1 1 calc(33% - 40px);
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    text-align: center;
+    min-width: 280px;
+    transition: 0.3s; 
+}
+
+.card:hover {
+    /* КРОСБРАУЗЕРНІСТЬ: ПРЕФІКСИ для transform */
+    -webkit-transform: translateY(-5px); 
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.card img {
+    max-width: 60px;
+    height: auto;
+    margin-bottom: 15px;
+    filter: brightness(0) invert(1); 
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.card h3 {
+    color: var(--orange);
+    font-family: var(--font-heading);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--white);
+    font-family: var(--font-main);
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Додаткові елементи Hero Section */
+.hero-section .main-logo { 
+    width: 150px; 
+    height: auto;
+    border-radius: 50%; 
+    border: 5px solid var(--orange);
+    margin-top: 20px;
+}
+
+/* Розділювач */
+hr.separator {
+    border: 1px solid var(--orange);
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* =======================================
+   ЗАГАЛЬНІ СТИЛІ СЕКЦІЙ (для h2)
+   ======================================= */
+/* Новий загальний стиль для h2: помаранчевий та більший */
+h2 {
+    color: var(--orange);
+    font-size: 2.5em; /* Збільшений розмір */
+    text-align: center;
+    margin-bottom: 30px; /* Збільшений відступ */
+}
+
+
+/* =======================================
+   СТИЛІ ДЛЯ СТОРІНКИ "ПРО НАС" (about.html)
+   ======================================= */
+   
+/* Стилі для опису секцій (змінено) */
+.why-choose-us .description,
+.services-section .description {
+    font-size: 1.6em; /* Збільшений розмір */
+    max-width: 950px; /* Збільшена ширина для центрування */
+    margin: 0 auto 50px; /* Центрування та збільшений нижній відступ */
+    text-align: center; /* Центрування тексту */
+}
+   
+/* Контейнер для блоків Історія та Досягнення */
+.about-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap; 
+    margin: 40px auto;
+}
+
+/* Блок "Наша історія" */
+.history-block {
+    flex: 1 1 450px; 
+    text-align: left;
+    background-color: var(--medium-gray);
+    border-radius: 8px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.history-block h2 {
+    color: var(--white);
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.history-block p {
+    color: var(--white);
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+}
+
+/* Блок "Ключові досягнення" */
+.achievements-block {
+    flex: 1 1 450px;
+    padding: 0;
+}
+
+.achievements-block h2 {
+    text-align: center;
+    color: var(--orange);
+    margin-bottom: 25px;
+}
+
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Картки досягнень (помаранчеві) */
+.achievement-metric {
+    background-color: var(--orange);
+    padding: 15px 20px;
+    text-align: left;
+    min-width: auto;
+    box-shadow: none; 
+}
+
+.achievement-metric h3, 
+.achievement-metric p {
+    color: var(--black); 
+    margin-bottom: 0;
+}
+
+.achievement-metric h3 {
+    margin-bottom: 5px;
+}
+
+.achievement-metric p {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* Блок "Доведена ефективність" (нижня частина сторінки) */
+.performance-title {
+    margin-top: 50px;
+}
+
+.performance-metrics {
+    justify-content: center;
+}
+
+.metric-card {
+    background-color: var(--black); 
+    border: 2px solid var(--orange); 
+    flex: 1 1 200px;
+}
+
+.metric-card h3 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+/* Специфічні кольори для метрик */
+.performance-metrics .metric-card:nth-child(1) h3 {
+    color: #4CAF50; /* Зелений */
+}
+.performance-metrics .metric-card:nth-child(2) h3 {
+    color: rgb(114, 34, 132); /* Фіолетовий */
+}
+.performance-metrics .metric-card:nth-child(3) h3 {
+    color: #FF0000; /* Червоний */
+}
+.performance-metrics .metric-card:nth-child(4) h3 {
+    color: var(--orange); 
+}
+.metric-card p {
+    color: var(--white);
+}
+
+/* Картки Команди (Team Cards) */
+.team-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    width: 250px;
+    background-color: var(--medium-gray);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+}
+
+.team-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border: 3px solid var(--orange);
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    color: var(--orange);
+    font-family: var(--font-heading);
+}
+
+.team-card p {
+    font-style: italic;
+    color: #cccccc;
+}
+
+/* Логотипи Партнерів (Partners) */
+.partners-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.partner-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.partner-logo img {
+    width: 100px;
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    border: 1px solid var(--orange);
+    border-radius: 6px;
+}
+
+.partner-logo img:hover {
+    opacity: 1;
+}
+
+
+/* =======================================
+   СТИЛІ ДЛЯ СТОРІНКИ "РЕСУРСИ" (resourses.html)
+   ======================================= */
+    
+/* Модифікатор для зменшення padding на hero-секції Ресурсів/Послуг */
+.hero-section.short {
+    padding: 50px 20px;
+}
+
+/* Контейнер для центрування карток ресурсів */
+.resources-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 80px; 
+}
+
+.resource-card {
+    background-color: var(--medium-gray);
+    border-left: 5px solid var(--orange);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: left;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.resource-card:hover {
+    background-color: #383838; 
+    transform: translateY(-3px);
+}
+
+.resource-card h3 {
+    color: var(--orange);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
+    
+.resource-card p {
+    color: #ccc;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.resource-card a {
+    color: var(--white);
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline-block;
+    transition: color 0.3s;
+}
+    
+.resource-card a:hover {
+    color: var(--orange);
+}
+
+
+/* =======================================
+   СТИЛІ ДЛЯ СТОРІНКИ "ПОСЛУГИ" (services.html)
+   ======================================= */
+
+/* Загальні стилі для секцій послуг */
+.services-section-wrapper {
+    background-color: var(--black); 
+    padding-bottom: 50px;
+}
+
+/* Стилі для підзаголовків секцій (початківці, досвідчені) */
+.services-section-wrapper h2 {
+    /* Цей h2 буде перевизначено загальним стилем h2 вище */
+    margin-bottom: 40px; 
+    font-size: 2.5em; /* Використовуємо новий, більший розмір */
+}
+
+/* Стилі для підзаголовка/опису секції (змінено) */
+.services-section-wrapper .subtitle.small-subtitle {
+    font-size: 1.3em; /* Збільшений розмір */
+    margin-bottom: 30px; /* Збільшений відступ до карток */
+    text-align: center; /* Центрування тексту */
+}
+
+/* Стилі списків у картках (перевизначаємо базовий стиль .card) */
+.course-list {
+    text-align: center;
+    list-style-type: disc; 
+    margin: 15px 0 25px 20px;
+    color: var(--white);
+    padding-left: 0; 
+}
+
+/* Стилі ціни */
+.course-price {
+    font-size: 1.8em; 
+    font-weight: bold; 
+    color: var(--orange); 
+    margin-bottom: 20px;
+}
+
+/* Специфічне перевизначення для card на сторінці послуг */
+.service-card {
+    flex: 1 1 300px; 
+    padding: 30px;
+}
+
+
+/* =======================================
+   СТИЛІ ДЛЯ МОДАЛЬНОГО ВІКНА РЕЄСТРАЦІЇ
+   ======================================= */
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); 
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: var(--light-gray);
+    margin: 5% auto;
+    padding: 30px;
+    border: 2px solid var(--orange);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+.modal-content h3 {
+    color: var(--orange);
+    font-family: var(--font-heading);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content h3 #courseTitle {
+    color: var(--white); 
+    font-weight: normal;
+}
+
+.close-btn {
+    color: var(--white);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--orange);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content label {
+    color: var(--white);
+    display: block; 
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="tel"],
+.modal-content select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--orange);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    resize: vertical;
+    background-color: var(--medium-gray);
+    color: var(--white);
+}
+
+.consent-text {
+    font-size: 0.85em;
+    color: #ccc;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+/* Перевизначення кнопки в модальному вікні */
+.modal-content .btn {
+    width: 100%; 
+    margin-top: 20px;
+}
+
+
+/* =======================================
+   МЕДІАЗАПИТИ (ADAPTIVITY) - Виправлено дублювання
+   ======================================= */
+    
+@media (max-width: 1024px) {
+    .cards-container {
+        justify-content: center; 
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 20px); 
+        min-width: 300px;
+    }
+
+    .team-card {
+        width: calc(50% - 15px); 
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .cards-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .card {
+        flex: 1 1 100%; 
+        min-width: unset;
+    }
+
+    .team-cards-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .team-card {
+        width: 100%;
+        max-width: 350px; 
+        margin: 0 auto;
+    }
+
+    .partners-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
